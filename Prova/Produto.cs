@@ -1,5 +1,15 @@
-﻿public class Calculo
+﻿public class Produto
 {
+    public string id;
+    public string unidade;
+    public string descrição;
+    public int valor;
+    public int pis;
+    public int icms;
+    public int confins;
+    public int lucro;
+    public int valorTotal;
+
     public double CalculoPIS(double valor, double porcentagem)
     {
         return valor * (porcentagem / 100);

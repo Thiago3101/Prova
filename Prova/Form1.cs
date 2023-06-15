@@ -36,29 +36,22 @@ namespace Prova
             double lucro1 = Convert.ToDouble(lucro.Text);
 
 
-            Calculo calculo = new Calculo();
+            Produto calculo = new Produto();
+            
             double calculopis = calculo.CalculoPIS(valor1, pis);
-            MessageBox.Show(calculopis.ToString());
             double calculoicms = calculo.CalculoPIS(valor1, icms);
-            MessageBox.Show(calculoicms.ToString());
             double calculoconfins = calculo.CalculoPIS(valor1, confins);
-            MessageBox.Show(calculoconfins.ToString());
 
             if(comboBox1.Text == "LT" || comboBox1.Text == "KL")
             {
                 double valor_produto = (calculo.Total(valor1, calculopis, calculoicms, calculoconfins, lucro1) + (calculo.Total(valor1, calculopis, calculoicms, calculoconfins, lucro1) * 0.05));
-
                 Valor_Produto.Text = valor_produto.ToString("C2");
             }
             else
             {
                 double valor_produto = (calculo.Total(valor1, calculopis, calculoicms, calculoconfins, lucro1));
-
                 Valor_Produto.Text = valor_produto.ToString("C2");
             }
-            
-
-            
         }
 
         private void textBox8_TextChanged(object sender, EventArgs e)
