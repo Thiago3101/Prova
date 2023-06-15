@@ -33,7 +33,7 @@
             this.codigo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.descricao = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.valor = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -46,7 +46,7 @@
             this.lucro = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.unidade = new System.Windows.Forms.ComboBox();
             this.Valor_Produto = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -93,12 +93,12 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "Descrição";
             // 
-            // textBox3
+            // descricao
             // 
-            this.textBox3.Location = new System.Drawing.Point(152, 93);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(293, 20);
-            this.textBox3.TabIndex = 6;
+            this.descricao.Location = new System.Drawing.Point(152, 93);
+            this.descricao.Name = "descricao";
+            this.descricao.Size = new System.Drawing.Size(293, 20);
+            this.descricao.TabIndex = 6;
             // 
             // label5
             // 
@@ -202,17 +202,17 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // comboBox1
+            // unidade
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.unidade.FormattingEnabled = true;
+            this.unidade.Items.AddRange(new object[] {
             "UN",
             "LT",
             "KL"});
-            this.comboBox1.Location = new System.Drawing.Point(343, 52);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(100, 21);
-            this.comboBox1.TabIndex = 19;
+            this.unidade.Location = new System.Drawing.Point(343, 52);
+            this.unidade.Name = "unidade";
+            this.unidade.Size = new System.Drawing.Size(100, 21);
+            this.unidade.TabIndex = 19;
             // 
             // Valor_Produto
             // 
@@ -228,7 +228,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(550, 450);
             this.Controls.Add(this.Valor_Produto);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.unidade);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.lucro);
@@ -241,7 +241,7 @@
             this.Controls.Add(this.label6);
             this.Controls.Add(this.valor);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.descricao);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.codigo);
@@ -261,7 +261,7 @@
         private System.Windows.Forms.TextBox codigo;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox descricao;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox valor;
         private System.Windows.Forms.Label label6;
@@ -274,7 +274,7 @@
         private System.Windows.Forms.TextBox lucro;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox unidade;
         private System.Windows.Forms.Label Valor_Produto;
     }
 }

@@ -2,13 +2,13 @@
 {
     public string id;
     public string unidade;
-    public string descrição;
-    public int valor;
-    public int pis;
-    public int icms;
-    public int confins;
-    public int lucro;
-    public int valorTotal;
+    public string descricao;
+    public double valor;
+    public double pis;
+    public double icms;
+    public double confins;
+    public double lucro;
+    public double valorTotal;
 
     public double CalculoPIS(double valor, double porcentagem)
     {
