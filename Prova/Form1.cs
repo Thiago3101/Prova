@@ -29,40 +29,40 @@ namespace Prova
 
         private void button1_Click(object sender, EventArgs e)
         {
-            double valor1 = Convert.ToDouble(valor.Text);
-            double pis = Convert.ToDouble(PIS.Text);
-            double icms = Convert.ToDouble(ICMS.Text);
-            double confins = Convert.ToDouble(CONFINS.Text);
-            double lucro1 = Convert.ToDouble(lucro.Text);
-
-
-            Produto calculo = new Produto();
-            calculo.id = codigo.Text;
-            calculo.unidade = unidade.Text;
-            calculo.descricao = descricao.Text;
-            calculo.valor = Convert.ToDouble(valor.Text);
-            calculo.pis = Convert.ToDouble(PIS.Text);
-            calculo.icms = Convert.ToDouble(ICMS.Text);
-            calculo.confins = Convert.ToDouble(CONFINS.Text);
-            calculo.lucro = Convert.ToDouble(lucro.Text);
-
-            double calculopis = calculo.CalculoPIS(valor1, pis);
-            double calculoicms = calculo.CalculoPIS(valor1, icms);
-            double calculoconfins = calculo.CalculoPIS(valor1, confins);
-
-            if(unidade.Text == "LT" || unidade.Text == "KL")
+            if(unidade.Text == "")
             {
-                double valor_produto = (calculo.Total(valor1, calculopis, calculoicms, calculoconfins, lucro1) + (calculo.Total(valor1, calculopis, calculoicms, calculoconfins, lucro1) * 0.05));
-                Valor_Produto.Text = valor_produto.ToString("C2");
-
-                calculo.valorTotal = valor_produto;
+                MessageBox.Show("Nenhuma unidade foi selecionada");
             }
             else
             {
-                double valor_produto = (calculo.Total(valor1, calculopis, calculoicms, calculoconfins, lucro1));
-                Valor_Produto.Text = valor_produto.ToString("C2");
+                Produto calculo = new Produto();
+                calculo.id = codigo.Text;
+                calculo.unidade = unidade.Text;
+                calculo.descricao = descricao.Text;
+                calculo.valor = Convert.ToDouble(valor.Text);
+                calculo.pis = Convert.ToDouble(PIS.Text);
+                calculo.icms = Convert.ToDouble(ICMS.Text);
+                calculo.confins = Convert.ToDouble(CONFINS.Text);
+                calculo.lucro = Convert.ToDouble(lucro.Text);
 
-                calculo.valorTotal = valor_produto;
+                double calculopis = calculo.CalculoPIS(calculo.valor, calculo.pis);
+                double calculoicms = calculo.CalculoPIS(calculo.valor, calculo.icms);
+                double calculoconfins = calculo.CalculoPIS(calculo.valor, calculo.confins);
+
+                if (unidade.Text == "LT" || unidade.Text == "KL")
+                {
+                    double valor_produto = (calculo.Total(calculo.valor, calculopis, calculoicms, calculoconfins, calculo.lucro) + (calculo.Total(calculo.valor, calculopis, calculoicms, calculoconfins, calculo.lucro) * 0.05));
+                    Valor_Produto.Text = valor_produto.ToString("C2");
+
+                    calculo.valorTotal = valor_produto;
+                }
+                else
+                {
+                    double valor_produto = (calculo.Total(calculo.valor, calculopis, calculoicms, calculoconfins, calculo.lucro));
+                    Valor_Produto.Text = valor_produto.ToString("C2");
+
+                    calculo.valorTotal = valor_produto;
+                }
             }
         }
 
